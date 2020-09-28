@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>COVID-19 pre-screening form</title>
+</head>
+<body>
+    <form name="myform" action="#" method="POST" >
+        <img src="logo-black.png" alt="logo-black" class="center"><br/>
+        <h2>Survey</h2>
+        <fieldset>
+                <legend>Covid19 Pre-screening Form</legend><br/>
+        <p>Has anyone in your household have travelled outside SA in the past 2 weeks (14 days)?</p>
+        <label for="">Yes</label>
+        <input type="radio" name="one[]" id="yes" onclick="showYes('yesone')">
+        
+        <label for="">No</label>
+        <input type="radio" name="one[]" id="no" onclick="showNo('yesone')"><br><br>
+
+        <div id="yesone" hidden>
+        <label for="">IF YES, WHERE </label>
+        <input type="text" name="username" id="username" required>
+        </div>
+        <br>
+        <!-- 1 -->
+        <P>Have you been in close contact in the past 14 days with someone currently in the provincial queue for COVID-19 testing?</P>
+        <label for="">Yes</label>
+        <input type="radio" name="two[]" id="yes" onclick="showYes('yestwo')">
+        
+        <label for="">No</label>
+        <input type="radio" name="two[]" id="no" onclick="showNo('yestwo')"><br><br>
+
+        <div id="yestwo" hidden>
+        <label for="">IF YES, WHEN </label>
+        <input type="text" name="username" id="username" required>
+        </div>
+
+         <br>
+         <!-- 2 -->
+        <P>Have you been in *close contact in the past 14 days with someone with a confirmed case of COVID-19? </P>
+        <label for="">Yes</label>
+        <input type="radio" name="three[]" id="yes" onclick="showYes('yesthree')">
+        
+        <label for="">No</label>
+        <input type="radio" name="three[]" id="no" onclick="showNo('yesthree')"><br><br>
+
+        <div id="yesthree" hidden>
+        <label for="">IF YES, WHERE, WHEN </label>
+        <input type="text" name="username" id="username" required>
+        </div>
+
+        <br>
+        <!-- 3 -->
+        <P>Have you been in close contact with someone who has a respiratory illness AND has been outside of SA in the past 14 days, before their respiratory illness first occurred? </P>
+        <label for="">Yes</label>
+        <input type="radio" name="four[]" id="yes" onclick="showYes('yesfour')">
+        
+        <label for="">No</label>
+        <input type="radio" name="four[]" id="no" onclick="showNo('yesfour')"><br><br>
+
+        <div id="yesfour" hidden>
+        <label for="">IF YES, WHEN </label>
+        <input type="text" name="username" id="username" required>
+        </div>
+
+        <br>
+        <!-- 4 -->
+        <P>Have you experienced cold or flu symptoms (cough, runny nose, fever or sore throat, but not seasonal allergies) in the last 3 days? </P>
+        <label for="">Yes</label>
+        <input type="radio" name="five[]" id="yes" onclick="showYes('yesfive')">
+        
+        <label for="">No</label>
+        <input type="radio" name="five[]" id="no" onclick="showNo('yesfive')"><br><br>
+
+        <div id="yesfive" hidden>
+        <label for="">IF YES, SPECIFY </label>
+        <input type="text" name="username" id="username" required>
+        </div>
+
+        <br>
+        <!-- 5 -->
+        <P>Do you currently have any cold or flu symptoms (cough, runny nose, fever, or sore throat, but not seasonal allergies)?  </P>
+        <label for="">Yes</label>
+        <input type="radio" name="six[]" id="yes" onclick="showYes('yessix')">
+        
+        <label for="">No</label>
+        <input type="radio" name="six[]" id="no" onclick="showNo('yessix')"><br><br>
+
+        <div id="yessix" hidden>
+        <label for="">IF YES, SPECIFY </label>
+        <input type="text" name="username" id="username" required>
+        </div>
+        	<label for="name">Name :</label><br>
+			<input type="text" placeholder="Name" name="name" id="name">
+			<br><br>
+
+			<label for="surname">Surname :</label><br>
+			<input type="text" placeholder="Surname" name="surname" id="surname">
+            <br><br>
+            
+            <label for="contact">contact no :</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="0812345678" id="contact"><br><br>
+
+      <div class="row">
+      <div class="col-25">
+        <label for="temparature">Temparature</label>
+      </div>
+      <div class="col-75">
+        <input type="temp" id="temp" name="phone" placeholder="36.4" id="temp"><br><br>
+        </select>
+      </div>
+    </div>
+        <input type="button" id="submit" value="Submit">
+    </fieldset>
+    </form>
+
+    <script>
+        
+        function showYes(id){
+            document.getElementById(id).hidden = false;
+        }
+
+        // functions for no
+        function showNo(id){
+            document.getElementById(id).hidden = true;
+        }
+        // function validor(){
+            // var s = document.getElementById("username");
+            // var val = s.value;
+            // alert(val);
+            document.getElementById("submit").addEventListener("click", function(event){
+                event.preventDefault();
+                if( document.getElementById("name").value == "") {
+                    alert( "Please provide your name!" );
+                    document.getElementById("name").focus() ;
+                    return false;
+                }
+                if( document.getElementById("surname").value == "") {
+                    alert( "Please provide your surname!" );
+                    document.getElementById("name").focus() ;
+                    return false;
+                }
+                if( document.getElementById("contact").value == "") {
+                    alert( "Please provide your cellphone no!" );
+                    document.getElementById("name").focus() ;
+                    return false;
+                }
+                if( document.getElementById("temp").value == "") {
+                    alert( "Please provide your temperature!" );
+                    document.getElementById("name").focus() ;
+                    return false;
+                }
+                // var s = document.getElementById("username");
+                // var val = s.value;
+                // alert(val);
+            });
+        // }
+    </script>
+</body>
+</html>
