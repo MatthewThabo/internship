@@ -1,3 +1,5 @@
+#Thabo Matlenana
+#thabo.matthew@gmail.com
 <p align="center">
   <a href="https://github.com/cybersec-clinique/internship">
     <img src="img/logo-black.png" alt="Logo" height="80">
